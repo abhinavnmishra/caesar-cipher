@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["encrypt"])) {
         $string = $_POST["string"];
         $encrypted_string = encrypt($string, 3);
-        echo "Encrypted string: " . $encrypted_string . "<br>";
+        echo "<span name = 'output'>Encrypted string: " . $encrypted_string . "<br></span>";
     } elseif(isset($_POST["decrypt"])) {
         $encrypted_string = $_POST["encrypted_string"];
         $decrypted_string = decrypt($encrypted_string, 3);
-        echo "Decrypted string: " . $decrypted_string . "<br>";
+        echo "<span name = 'output'>Decrypted string: " . $decrypted_string . "<br></span>";
     }
 }
 

@@ -1,16 +1,15 @@
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
 
 # create a new Firefox browser instance
 driver = webdriver.Firefox()
-
 # navigate to the webpage
 driver.get("http://localhost/encryption.php")
 
 # Encryption Test
 string_input = driver.find_element_by_name("string")
 string_input.send_keys("Hello World")
-encryption_key = driver.find_element_by_name("encryption_key")
+encryption_key = driver.find_element_by_name("encrypted_string")
 encryption_key.send_keys("secretkey")
 encrypt_button = driver.find_element_by_name("encrypt")
 encrypt_button.click()
